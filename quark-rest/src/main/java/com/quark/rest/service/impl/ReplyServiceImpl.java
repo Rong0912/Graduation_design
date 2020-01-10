@@ -9,9 +9,11 @@ import com.quark.common.entity.Reply;
 import com.quark.common.entity.User;
 import com.quark.common.exception.ServiceProcessException;
 import com.quark.rest.service.NotificationService;
+import com.quark.rest.service.RedisService;
 import com.quark.rest.service.ReplyService;
 import com.quark.rest.service.WebSocketService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -21,6 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.criteria.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Author LHR
@@ -28,6 +31,11 @@ import java.util.Date;
  */
 @Service
 public class ReplyServiceImpl extends BaseServiceImpl<ReplyDao, Reply> implements ReplyService {
+    @Value("${REDIS_RANK_POSTS}")
+    private String REDIS_RANK_POSTS;
+
+    @Autowired
+    private RedisService<List<Object>> redisService;
 
     @Autowired
     private PostsDao postsDao;
@@ -40,7 +48,7 @@ public class ReplyServiceImpl extends BaseServiceImpl<ReplyDao, Reply> implement
 
     @Override
     public Page<Reply> getReplyByPage(Integer postsId, int pageNo, int length) {
-        Sort.Order order = new Sort.Order(Sort.Direction.ASC, "id");
+        Sort.Order order = new Sort.Order(Sort.Direction.DESC, "id");
         Sort sort = new Sort(order);
         PageRequest pageable = new PageRequest(pageNo, length, sort);
 
@@ -76,6 +84,8 @@ public class ReplyServiceImpl extends BaseServiceImpl<ReplyDao, Reply> implement
             reply.setUser(user);
             reply.setPosts(posts);
             repository.save(reply);
+            //清除redis中的热门帖子，重新加载
+            redisService.deleteString(REDIS_RANK_POSTS);
 
             //判断是否是自问自回，如果是则不通知
             if (posts.getUser().getId()!=user.getId()) {

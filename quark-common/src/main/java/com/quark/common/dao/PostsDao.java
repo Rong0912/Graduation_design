@@ -22,7 +22,7 @@ public interface PostsDao extends JpaRepository<Posts,Integer> ,JpaSpecification
     @Override
     List<Posts> findAll();
 
-    @Query(value = "select p.id, p.title , p.reply_count from quark_posts p where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <=DATE(p.init_time) ORDER by reply_count desc limit 10" ,nativeQuery = true)
+    @Query(value = "select p.id, p.title , p.reply_count from quark_posts p where DATE_SUB(CURDATE(), INTERVAL 30 DAY) <=DATE(p.init_time) ORDER by reply_count desc limit 12" ,nativeQuery = true)
     List<Object> findHot();
 
     Page<Posts> findByUser(User user, Pageable pageable);
