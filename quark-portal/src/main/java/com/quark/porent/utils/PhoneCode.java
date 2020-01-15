@@ -9,16 +9,30 @@ import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
+import dev.paoding.longan.annotation.RestService;
+import dev.paoding.longan.support.ValidationService;
 
+import javax.annotation.Resource;
 
+@RestService
 public class PhoneCode {
+    @Resource
+    private static ValidationService validationService;
 
     private static String code ;
 
     public static void main(String[] args) {
-        String phone = "13979379673"; //此处可输入你的手机号码进行测试
-        getPhonemsg(phone);
 
+        String phone="18270346865";
+
+        String vcode = "";
+        for (int i = 0; i < 6; i++) {
+            vcode = vcode + (int)(Math.random() * 9);
+        }
+        getPhonemsg(phone,vcode);
+
+        validationService.saveCaptcha(phone,vcode);
+        //将验证码加密放入数据库，用户填完验证码后在和数据库的验证码解密后的去比对
     }
 
     /**
@@ -26,7 +40,7 @@ public class PhoneCode {
      * @param mobile
      * @return
      */
-    public static String getPhonemsg(String mobile) {
+    public static String getPhonemsg(String mobile,String captcha) {
 
         /**
          * 进行正则关系校验
@@ -60,7 +74,7 @@ public class PhoneCode {
         }
 
         //获取验证码
-        code = vcode();
+        code = captcha;
 
         IAcsClient acsClient = new DefaultAcsClient(profile);
         // 组装请求对象
