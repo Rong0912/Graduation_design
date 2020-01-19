@@ -9,15 +9,10 @@ import com.aliyuncs.exceptions.ServerException;
 import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
-import dev.paoding.longan.annotation.RestService;
-import dev.paoding.longan.support.ValidationService;
 
-import javax.annotation.Resource;
 
-@RestService
+
 public class PhoneCode {
-    @Resource
-    private static ValidationService validationService;
 
     private static String code ;
 
@@ -31,7 +26,7 @@ public class PhoneCode {
         }
         getPhonemsg(phone,vcode);
 
-        validationService.saveCaptcha(phone,vcode);
+        //validationService.saveCaptcha(phone,vcode);
         //将验证码加密放入数据库，用户填完验证码后在和数据库的验证码解密后的去比对
     }
 
