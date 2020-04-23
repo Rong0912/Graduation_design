@@ -1,1 +1,2 @@
 # Graduation_design
+   Graduation_design项目文件夹下配置一个总的quark_parent的 Maven配置文件和四个子模块，四个子模块分别为单独项目，拥有单独的pom.XML配置文件。quark-common模块 :采用了Spring data+MySQL实现基础服务抽象,DAO层，Entity以及DTO；quark-admin模块：采用springboot+shiro搭建的细粒度的基于URL的权限管理系统，进行帖子管理，回复管理，用户管理等操作；quark-rest模块：使用spring MVC搭建RESTFUL服务，采用WebSocket协议+stomp协议搭建推送消息服务，实现一对一推送与一对多推送，面向各个用户客户端；quark-portal模块：前台社区系统，使用springMVC进行页面跳转与拦截，采用前后端分离的机制实现，后端采用restful接口风格，与前端进行对接。前台展示模块通过http协议访问RESTFulAPI获取数据，使用LayUI，jQuery渲染页面。使用Redis进行了热点缓存
