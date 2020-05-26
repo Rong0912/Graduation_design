@@ -13,10 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * @Author LHR
- * Create By 2017/8/12
- */
+
 @RestController
 @RequestMapping("/roles")
 public class RoleController extends BaseController {

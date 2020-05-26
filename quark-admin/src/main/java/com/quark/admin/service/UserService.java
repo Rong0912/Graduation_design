@@ -4,10 +4,7 @@ import com.quark.common.base.BaseService;
 import com.quark.common.entity.User;
 import org.springframework.data.domain.Page;
 
-/**
- * @Author LHR
- * Create By 2017/8/25
- */
+
 public interface UserService  extends BaseService<User> {
 
     /**

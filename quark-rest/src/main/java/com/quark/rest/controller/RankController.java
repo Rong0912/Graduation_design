@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * @Author LHR
- * Create By 2017/8/31
+ * Create By 2019/12/31
  */
 @Api(value = "排行榜接口", description = "七天内热帖排行榜,七天内新注册用户排行榜")
 @RestController

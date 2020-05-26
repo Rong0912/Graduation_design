@@ -11,10 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * @Author LHR
- * Create By 2017/8/25
- */
 @RestController
 @RequestMapping("/users")
 public class UserController extends BaseController{
