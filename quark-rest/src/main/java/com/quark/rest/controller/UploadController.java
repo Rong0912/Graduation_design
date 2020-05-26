@@ -15,10 +15,6 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * @Author LHR
- * Create By 2017/8/26
- */
 @Api(value = "文件上传接口",description = "图片上传")
 @RestController
 @RequestMapping("/upload")

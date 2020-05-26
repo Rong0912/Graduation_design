@@ -10,10 +10,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 
-/**
- * @Author LHR
- * Create By 2017/9/6
- */
 @Service
 @Transactional
 public class NotificationServiceImpl extends BaseServiceImpl<NotificationDao,Notification> implements NotificationService{

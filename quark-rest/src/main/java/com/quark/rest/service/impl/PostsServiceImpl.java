@@ -23,10 +23,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * @Author LHR
- * Create By 2017/8/26
- */
 @Service
 public class PostsServiceImpl extends BaseServiceImpl<PostsDao, Posts> implements PostsService {
 

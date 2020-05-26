@@ -6,10 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-/**
- * @Author LHR
- * Create By 2017/9/6
- */
 @Service
 public class WebSocketService {
 

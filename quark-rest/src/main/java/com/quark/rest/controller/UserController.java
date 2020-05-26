@@ -18,10 +18,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * @Author LHR
- * Create By 2017/8/22
- */
 @Api(value = "用户接口", description = "用户注册，登录，登出，获取用户信息等服务")
 @RestController
 @RequestMapping("/user")

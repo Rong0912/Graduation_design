@@ -6,10 +6,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * @Author LHR
- * Create By 2017/9/8
- */
 @ControllerAdvice
 public class GlobalExceptionHandler {
     public static final String DEFAULT_ERROR_VIEW = "error";

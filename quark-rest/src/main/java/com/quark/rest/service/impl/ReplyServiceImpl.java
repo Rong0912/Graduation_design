@@ -25,10 +25,6 @@ import javax.persistence.criteria.*;
 import java.util.Date;
 import java.util.List;
 
-/**
- * @Author LHR
- * Create By 2017/8/29
- */
 @Service
 public class ReplyServiceImpl extends BaseServiceImpl<ReplyDao, Reply> implements ReplyService {
     @Value("${REDIS_RANK_POSTS}")

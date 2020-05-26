@@ -10,9 +10,6 @@ import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 
-
-
-
 public class PhoneCode {
 
     private static String code ;

@@ -9,11 +9,6 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.messaging.simp.annotation.SendToUser;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @Author LHR
- * Create By 2017/9/6
- */
-
 @Api(value = "WebSocket接口", description = "用于服务器端对客户都进行消息推送")
 @RestController
 public class WebSocketController {

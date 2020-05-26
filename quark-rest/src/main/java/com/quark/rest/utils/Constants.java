@@ -1,9 +1,5 @@
 package com.quark.rest.utils;
 
-/**
- * @Author LHR
- * Create By 2017/8/22
- */
 public class Constants {
     //Redis 常量
     public static final String REDIS_USER_KEY = "quark:user:";

@@ -14,10 +14,6 @@ import javax.annotation.Resource;
 
 import static com.quark.porent.utils.PhoneCode.getPhonemsg;
 
-/**
- * @Author LHR
- * Create By 2017/8/24
- */
 @Service
 public class UserServiceImpl implements UserService{
 

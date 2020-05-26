@@ -9,9 +9,6 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @Author LHR
- * Create By 2017/8/18
- *
  * 回复
  */
 @Entity

@@ -6,10 +6,7 @@ import com.quark.common.exception.ServiceProcessException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * @Author LHR
- * Create By 2017/8/13
- */
+
 public class BaseController {
 
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());

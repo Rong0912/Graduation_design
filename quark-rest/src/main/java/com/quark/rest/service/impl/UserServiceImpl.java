@@ -14,10 +14,6 @@ import org.springframework.util.DigestUtils;
 import java.util.Date;
 import java.util.UUID;
 
-/**
- * @Author LHR
- * Create By 2017/8/21
- */
 @Service
 public class UserServiceImpl extends BaseServiceImpl<UserDao, User> implements UserService {
 

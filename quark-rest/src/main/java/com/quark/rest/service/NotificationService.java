@@ -6,10 +6,6 @@ import com.quark.common.entity.User;
 
 import java.util.List;
 
-/**
- * @Author LHR
- * Create By 2017/9/6
- */
 public interface NotificationService extends BaseService<Notification>{
 
     /**
